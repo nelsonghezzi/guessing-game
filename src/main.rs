@@ -20,7 +20,7 @@ fn main() {
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => {
-                println!("{}Please type a number{}", "\x1B[31m", "!\x1B[0m");
+                println!("Please type a number!");
                 continue;
             }
         };
@@ -31,7 +31,7 @@ fn main() {
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
             Ordering::Equal => {
-                println!("{}You win!{}", "\x1B[32m", "\x1B[0m");
+                println!("You win!");
                 break;
             }
         }
