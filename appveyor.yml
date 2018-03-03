@@ -38,5 +38,6 @@ artifacts:
     name: GuessingGame
 
 cache:
+  - C:\Users\appveyor\.rustup\toolchains
   - C:\Users\appveyor\.cargo\registry
   - target
