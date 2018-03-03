@@ -21,6 +21,9 @@ install:
 build_script:
   - cargo build --release
 
+after_build:
+  - 7z a guessing_game.zip %APPVEYOR_BUILD_FOLDER%\target\release\guessing_game.exe
+
 deploy:
   provider: GitHub
   auth_token:
@@ -31,9 +34,8 @@ deploy:
     appveyor_repo_tag: true
 
 artifacts:
-  - path: target\release\guessing_game.exe
+  - path: guessing_game.zip
     name: GuessingGame
-    type: zip
 
 cache:
   - C:\Users\appveyor\.cargo\registry
